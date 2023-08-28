@@ -1,0 +1,18 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} DESAFIOS {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>FORMULARIO DE DESAFIOS</h2>
+<form action="{% url 'desafios' %}" method="POST"> {% csrf_token %}
+    
+    {{ formulario.as_p }}
+   
+    <input type="submit" value="Agregar Desafio">
+
+</form>
+
+<h3>{{ mensaje }} </h3>
+{% endblock %}

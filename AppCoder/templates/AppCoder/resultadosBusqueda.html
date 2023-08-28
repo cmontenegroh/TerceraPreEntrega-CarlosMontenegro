@@ -1,0 +1,22 @@
+    {% extends "AppCoder/padre.html" %}
+
+    {% load static %}
+
+    {% block titulo %} RESULTADOS DE BUSQUEDA POR COMISION {% endblock %}
+
+    {% block contenido_que_cambia %}
+
+    {% if aulas %}
+        <h2>RESULTADOS DE LA BUSQUEDA</h2>
+        {% for aula in aulas %}
+
+            <h3>{{ aula.nombre }} - {{ aula.comision }}</h3>
+        {% endfor %}
+
+    {% else %}
+        <h1> NO SE ENCUENTRA EN LA BASE DE DATOS</h1>
+
+    {% endif %}
+
+
+    {% endblock %}
